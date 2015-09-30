@@ -20,11 +20,7 @@ a.mdl-navigation__link {
   vertical-align: middle;
 }
 
-.profiles {
-  /*margin: 8px;*/
-}
-
-.profiles-table {
+.profiles-table, .tasks-table {
   width: 100%;
 }
 
@@ -67,7 +63,7 @@ a.mdl-navigation__link {
   float: right;
 }
 
-#add-account {
+#add-account, #add-task {
   position: fixed;
   display: block;
   right: 0;

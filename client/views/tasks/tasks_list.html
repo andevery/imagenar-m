@@ -1,7 +1,12 @@
-<!-- <template name="tasksList">
-  <div class="tasks">
-    {{#each tasks}}
-      {{> taskItem}}
-    {{/each}}
-  </div>
-</template> -->
+<template name="tasksList">
+  <table class="tasks-table mdl-data-table mdl-js-data-table">
+    <tbody>
+      {{#each tasks}}
+        {{> taskItem}}
+      {{/each}}
+    </tbody>
+  </table>
+  <a href="{{pathFor 'taskNew'}}" id="add-task" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">
+    <i class="material-icons mdl-color-text--blue-grey-700">add</i>
+  </a>
+</template>
