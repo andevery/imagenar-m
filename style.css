@@ -5,22 +5,44 @@ html, body {
   font-weight: 400;
   line-height: 20px;
 }
+
 a.mdl-navigation__link {
   /*font-size: 14px;*/
   font-weight: 600;
   color: #AAA !important;
 }
-.profile {
-  height: 50px;
+
+.profiles {
+  margin: 8px;
 }
+
+.section__circle-container > .section__circle-container__circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 32px;
+  margin: 8px 0px;
+  display: block;
+}
+
 .profile {
-  padding: 12px;
-  padding-left: 18px;
+  padding-left: 12px;
 }
 
 .profile h6 {
   display: inline-block;
-  margin: 0px;
-  padding: 0px;
-  color: #666;
+}
+
+.profile a {
+  float: right;
+  margin-top: 17px;
+}
+
+#add-account {
+  position: fixed;
+  display: block;
+  right: 0;
+  bottom: 0;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  z-index: 900;
 }

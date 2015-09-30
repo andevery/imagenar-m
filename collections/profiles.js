@@ -3,7 +3,7 @@ Profiles = new SQL.Collection('profiles');
 if (Meteor.isServer) {
   Profiles.createTable({username: ['$string', '$unique'], password: ['$string']}).save();
   Profiles.publish('profiles', function() {
-    return Profiles.select().order('username ASC');
+    return Profiles.select().order('username DESC');
   });
 }
 
