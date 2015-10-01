@@ -1,5 +1,8 @@
 Template.taskItem.helpers({
-  taskTypes: function() {
-    return TaskTypes;
+  taskType: function() {
+    return TaskTypes[this.type];
+  },
+  taskIcon: function() {
+    return "collections"
   }
 });

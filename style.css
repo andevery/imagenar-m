@@ -32,21 +32,21 @@ a.mdl-navigation__link {
   display: block;
 }
 
-.profile .userpic {
+.profile .userpic, .task .icon {
   width: 24px;
   padding: 5px 10px !important;
 }
 
-.profile .userpic i {
+.profile .userpic i, .task .icon i {
   font-size: 48px;
 }
 
-.profile .username {
+.profile .username, .task .type {
   overflow: hidden;
   padding: 15px 0px 0px 0px;
 }
 
-.profile .username h6 {
+.profile .username h6, .task .type h6 {
   width: 150px;
   overflow: visible;
   margin: 5px;

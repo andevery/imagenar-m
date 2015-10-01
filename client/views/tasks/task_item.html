@@ -1,8 +1,8 @@
 <template name="taskItem">
   <tr class="task">
-    <td class="userpic mdl-data-table__cell--non-numeric"><i class="material-icons mdl-color-text--blue-grey-200">account_circle</i></td>
-    <td class="username mdl-data-table__cell--non-numeric mdl-cell mdl-cell--11-col mdl-color-text--blue-grey-700">
-      <h6>{{ type }}</h6>
+    <td class="icon mdl-data-table__cell--non-numeric"><i class="material-icons mdl-color-text--blue-grey-200">{{taskIcon}}</i></td>
+    <td class="type mdl-data-table__cell--non-numeric mdl-cell mdl-cell--11-col mdl-color-text--blue-grey-700">
+      <h6>{{ taskType }}</h6>
     </td>
     <td class="actions mdl-data-table__cell--non-numeric">
       <a href="" class="delete mdl-button mdl-js-button mdl-button--icon">

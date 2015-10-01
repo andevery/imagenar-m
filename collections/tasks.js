@@ -1,8 +1,8 @@
 Tasks = new SQL.Collection('tasks');
 
 TaskTypes = {
-  unfollow: 0,
-  tags: 1
+  0: "Unfollow",
+  1: "By tags"
 };
 
 TaskStatuses = {
