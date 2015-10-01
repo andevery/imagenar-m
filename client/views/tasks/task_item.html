@@ -2,14 +2,19 @@
   <tr class="task">
     <td class="icon mdl-data-table__cell--non-numeric"><i class="material-icons mdl-color-text--blue-grey-200">{{taskIcon}}</i></td>
     <td class="type mdl-data-table__cell--non-numeric mdl-cell mdl-cell--11-col mdl-color-text--blue-grey-700">
-      <h6>{{ taskType }}</h6>
+      <h6>{{taskName}}</h6>
+      <span>andy_odds,&nbsp;</span>
+      <span>{{taskType}},&nbsp;</span>
+      <span>followed: -,&nbsp;</span>
+      <span>liked: -</span>
+      {{counters}}
     </td>
     <td class="actions mdl-data-table__cell--non-numeric">
       <a href="" class="delete mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons mdl-color-text--blue-grey-700">delete</i>
+        <i class="material-icons mdl-color-text--blue-grey-700">pause</i>
       </a>
       <a href="{{pathFor 'taskPage'}}" class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons mdl-color-text--blue-grey-700">edit</i>
+        <i class="material-icons mdl-color-text--blue-grey-700">stop</i>
       </a>
     </td>
   </tr>

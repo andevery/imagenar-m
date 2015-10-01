@@ -17,11 +17,11 @@ a.mdl-navigation__link {
   /*color: #999;*/
   margin-right: 30px;
   font-size: 24px;
-  vertical-align: middle;
 }
 
 .profiles-table, .tasks-table {
   width: 100%;
+  max-width: 100%;
 }
 
 .section__circle-container > .section__circle-container__circle {
@@ -32,31 +32,47 @@ a.mdl-navigation__link {
   display: block;
 }
 
-.profile .userpic, .task .icon {
-  width: 24px;
-  padding: 5px 10px !important;
+.profile {
+}
+
+.profile td.userpic, .task .icon {
+  width: 48px;
+  padding: 0px 10px !important;
+  vertical-align: middle;
 }
 
 .profile .userpic i, .task .icon i {
   font-size: 48px;
+  padding-top: 5px;
 }
 
-.profile .username, .task .type {
+.profile .userinfo, .task .type {
   overflow: hidden;
-  padding: 15px 0px 0px 0px;
-}
-
-.profile .username h6, .task .type h6 {
-  width: 150px;
-  overflow: visible;
-  margin: 5px;
+  padding: 0;
   vertical-align: middle;
 }
 
-.profile td.actions {
+.profile .userinfo h6, .task .type h6 {
+  display: inline-block;
+  float: left;
+  max-width: 140px;
+  overflow: hidden;
+  margin: 0px 20px 0px 0px;
+  font-weight: 600 !important;
+}
+
+.profile .userinfo span, .task .type span {
+  display: inline-block;
+  float: left;
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+.profile td.actions, .task td.actions {
   width: 75px;
   min-width: 75px;
-  padding: 15px 10px 0px 0px;
+  padding: 0;
+  vertical-align: middle;
 }
 
 .profile a {

@@ -1,16 +1,16 @@
 Tasks = new SQL.Collection('tasks');
 
 TaskTypes = {
-  0: "Unfollow",
-  1: "By tags"
+  0: "unfollowing",
+  1: "by tags"
 };
 
 TaskStatuses = {
-  0: "New",
-  1: "Waiting",
-  2: "Active",
-  3: "Paused",
-  4: "Finished"
+  0: "new",
+  1: "waiting",
+  2: "active",
+  3: "paused",
+  4: "finished"
 };
 
 var taskTable = {
@@ -27,7 +27,7 @@ var taskTable = {
   minFollows: ['$number', {$default: 100}],
   minMedia: ['$number', {$default: 20}],
   delay: ['$number', {$default: 60}],
-  tags: ['$string'],
+  tags: ['$string', '$notnull'],
   likesCount: ['$number', {$default: 0}],
   followsCount: ['$number', {$default: 0}],
   unfollowsCount: ['$number', {$default: 0}]
@@ -44,8 +44,5 @@ if (Meteor.isServer) {
 }
 
 if (Meteor.isClient) {
-  Tasks.createTable({
-    type: ['$number', {$default: 1}],
-    status: ['$number', {$default: 0}]
-  });
+  Tasks.createTable(taskTable);
 }
