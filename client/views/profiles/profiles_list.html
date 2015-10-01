@@ -1,11 +1,11 @@
 <template name="profilesList">
-  <section class="profiles section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-    <div class="profiles mdl-grid mdl-grid--no-spacing">
+  <table class="profiles-table mdl-data-table mdl-js-data-table">
+    <tbody>
       {{#each profiles}}
         {{> profileItem}}
       {{/each}}
-    </div>
-  </section>
+    </tbody>
+  </table>
   <a href="{{pathFor 'profileNew'}}" id="add-account" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">
     <i class="material-icons mdl-color-text--blue-grey-700">add</i>
   </a>

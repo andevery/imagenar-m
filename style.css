@@ -7,13 +7,21 @@ html, body {
 }
 
 a.mdl-navigation__link {
-  /*font-size: 14px;*/
+  /*font-size: 16px;*/
   font-weight: 600;
-  color: #AAA !important;
+  color: #999 !important;
+  vertical-align: middle;
 }
 
-.profiles {
-  margin: 8px;
+.mdl-navigation__link .material-icons {
+  /*color: #999;*/
+  margin-right: 30px;
+  font-size: 24px;
+  vertical-align: middle;
+}
+
+.profiles-table, .tasks-table {
+  width: 100%;
 }
 
 .section__circle-container > .section__circle-container__circle {
@@ -24,20 +32,38 @@ a.mdl-navigation__link {
   display: block;
 }
 
-.profile {
-  padding-left: 12px;
+.profile .userpic {
+  width: 24px;
+  padding: 5px 10px !important;
 }
 
-.profile h6 {
-  display: inline-block;
+.profile .userpic i {
+  font-size: 48px;
+}
+
+.profile .username {
+  overflow: hidden;
+  padding: 15px 0px 0px 0px;
+}
+
+.profile .username h6 {
+  width: 150px;
+  overflow: visible;
+  margin: 5px;
+  vertical-align: middle;
+}
+
+.profile td.actions {
+  width: 75px;
+  min-width: 75px;
+  padding: 15px 10px 0px 0px;
 }
 
 .profile a {
   float: right;
-  margin-top: 17px;
 }
 
-#add-account {
+#add-account, #add-task {
   position: fixed;
   display: block;
   right: 0;

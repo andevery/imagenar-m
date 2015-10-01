@@ -9,15 +9,21 @@
     <div class="mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50 is-casting-shadow">
       <span class="mdl-layout-title">Imagenar</span>
         <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="">Tasks</a>
-          <a class="mdl-navigation__link" href="{{pathFor 'profilesList'}}">Accounts</a>
+          <a class="mdl-navigation__link" href="{{pathFor 'tasksList'}}">
+            <i class="material-icons">assignment</i>
+            Tasks
+          </a>
+          <a class="mdl-navigation__link" href="{{pathFor 'profilesList'}}">
+            <i class="material-icons">account_box</i>
+            Accounts
+          </a>
         </nav>
     </div>
     <main class="mdl-layout__content">
-      <div class="page-content">
+      <section class="content section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
         <!-- {{> profilesList}} -->
-        {{> yield}}
-      </div>
+          {{> yield}}
+      </section>
     </main>
   </div>
 </template>
