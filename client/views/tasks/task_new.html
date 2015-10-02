@@ -1,0 +1,26 @@
+<template name="taskNew">
+  <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+    <div class="mdl-tabs__tab-bar">
+      <a href="#starks-panel" class="mdl-tabs__tab is-active">Follow / Likes</a>
+      <a href="#lannisters-panel" class="mdl-tabs__tab">Unfollow</a>
+    </div>
+
+    <div class="task-new mdl-tabs__panel is-active" id="starks-panel">
+    </div>
+    <div class="task-new mdl-tabs__panel" id="lannisters-panel">
+      <form class="task-new-form">
+        <div class="mdl-select mdl-js-select mdl-select--floating-label">
+          <select class="mdl-select__input" id="profilesid" name="profilesid">
+            {{#each accounts}}
+              <option value="{{id}}">{{username}}</option>
+            {{/each}}
+          </select>
+          <label class="mdl-select__label" for="profilesid">Account</label>
+        </div>
+        <input type="hidden" value="0" id="type"/>
+        <input type="hidden" value="0" id="status"/>
+        <input type="submit" value="create" class="submit mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"/>
+      </form>
+    </div>
+  </div>
+</template>

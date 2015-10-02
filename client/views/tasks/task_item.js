@@ -15,15 +15,21 @@ Template.taskItem.helpers({
     return targets.join("/");
   },
   taskType: function() {
-    return TaskTypes[this.type];
+    if (this.type == 0) {
+      return "";
+    }
+    return TaskTypes[this.type] + " /";
   },
   taskIcon: function() {
     return "collections";
   },
+  taskStatus: function () {
+    return TaskStatuses[this.status]
+  },
   counters: function() {
     var counts = "";
     if (this.type == 0) {
-      counts = "<span>, unfollowed: " + this.unfollowsCount + "</span>";
+      counts = "<span>/ unfollowed: " + this.unfollowsCount + "</span>";
     }
     if (this.follows) {
       counts += "<span>/ followed: " + this.followsCount + "&nbsp;</span>";
