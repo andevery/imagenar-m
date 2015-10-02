@@ -44,5 +44,5 @@ if (Meteor.isServer) {
 }
 
 if (Meteor.isClient) {
-  Tasks.createTable(taskTable);
+  Tasks.createTable($.extend(taskTable, {profilesid: ['$number']}));
 }

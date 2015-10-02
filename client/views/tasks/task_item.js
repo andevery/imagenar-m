@@ -1,26 +1,39 @@
 Template.taskItem.helpers({
   taskName: function() {
     if (this.type == 0) {
-      return "Unfollowing"
+      return "Unfollowing";
     }
 
-    var targets = []
-    if (this.follows == true) {
-      targets.push("Following")
+    var targets = [];
+    if (this.follows) {
+      targets.push("Following");
     }
-    if (this.likes == true) {
-      targets.push("Liking")
+    if (this.likes) {
+      targets.push("Liking");
     }
 
-    return targets.join("/")
+    return targets.join("/");
   },
   taskType: function() {
     return TaskTypes[this.type];
   },
   taskIcon: function() {
-    return "collections"
+    return "collections";
   },
   counters: function() {
-    return new Handlebars.SafeString("<span>FFF</span>")
+    var counts = "";
+    if (this.type == 0) {
+      counts = "<span>, unfollowed: " + this.unfollowsCount + "</span>";
+    }
+    if (this.follows) {
+      counts += "<span>/ followed: " + this.followsCount + "&nbsp;</span>";
+    }
+    if (this.likes) {
+      counts += "<span>/ liked: " + this.likesCount + "</span>";
+    }
+    return new Handlebars.SafeString(counts);
+  },
+  username: function() {
+    return Profiles.select().where('id = ?', this.profilesid).fetch()[0].username;
   }
 });
