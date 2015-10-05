@@ -31,7 +31,7 @@ var taskTable = {
   likesCount: ['$number', {$default: 0}],
   followsCount: ['$number', {$default: 0}],
   unfollowsCount: ['$number', {$default: 0}]
-}
+};
 
 if (Meteor.isServer) {
   Tasks.createTable(taskTable).save();

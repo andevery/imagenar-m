@@ -1,7 +1,7 @@
 Whitelists = new SQL.Collection('whitelists');
 
 if (Meteor.isServer) {
-  Whitelists.createTable({apiuser: ['$string', '$notnull']}).save();
+  Whitelists.createTable({username: ['$string', '$notnull']}).save();
   Whitelists.createRelationship('profiles', '$onetomany').save();
 
   Whitelists.publish('whitelists', function() {
@@ -11,7 +11,7 @@ if (Meteor.isServer) {
 
 if (Meteor.isClient) {
   Whitelists.createTable({
-    apiuser: ['$string', '$notnull'],
+    username: ['$string', '$notnull'],
     profilesid: ['$number', '$notnull']
   });
 }

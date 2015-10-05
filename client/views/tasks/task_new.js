@@ -15,5 +15,14 @@ Template.taskNew.events({
 
     Tasks.insert(task).save();
     Router.go('tasksList');
+  },
+  'change #profilesid': function (e) {
+    Session.set('profilesID', $(e.target).val())
   }
+});
+
+Tracker.autorun(function () {
+  if (Session.get('profilesID')) {
+    // var whitelistHandle = Meteor.subscribe
+  };
 });
