@@ -3,7 +3,7 @@ Template.profileItem.events({
     e.preventDefault();
 
     if (confirm("Delete this account?")) {
-      Profiles.remove().where("id = ?", this.id).save()
+      Profiles.remove().where("id = ?", this.id).save();
     }
   }
 });

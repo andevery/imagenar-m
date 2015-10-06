@@ -1,5 +1,28 @@
+Session.setDefault('sortByStatus', 'active');
+
 Template.tasksList.helpers({
   tasks: function() {
-    return Tasks.select().fetch();
+    if (Session.get('sortByStatus') == 'active') {
+      return Tasks.select().where('status <= 3').fetch();
+    }
+
+    return Tasks.select().where('status > 3').fetch();
+  },
+  active: function() {
+    return Session.get('sortByStatus') == 'active';
+  },
+  finished: function() {
+    return Session.get('sortByStatus') == 'finished';
+  }
+});
+
+Template.tasksList.events({
+  'click .active': function (e) {
+    e.preventDefault();
+    Session.set('sortByStatus', 'active');
+  },
+  'click .finished': function (e) {
+    e.preventDefault();
+    Session.set('sortByStatus', 'finished');
   }
 });

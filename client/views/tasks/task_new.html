@@ -1,13 +1,11 @@
 <template name="taskNew">
   <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
     <div class="mdl-tabs__tab-bar">
-      <a href="#starks-panel" class="mdl-tabs__tab is-active">Follow / Likes</a>
-      <a href="#lannisters-panel" class="mdl-tabs__tab">Unfollow</a>
+      <a href="#follows-likes" class="mdl-tabs__tab is-active">Follow / Likes</a>
+      <a href="#unfollow" class="mdl-tabs__tab">Unfollow</a>
     </div>
 
-    <div class="task-new mdl-tabs__panel is-active" id="starks-panel">
-    </div>
-    <div class="task-new mdl-tabs__panel" id="lannisters-panel">
+    <div class="task-new mdl-tabs__panel is-active" id="follows-likes">
       <form class="task-new-form">
         <div class="mdl-select mdl-js-select mdl-select--floating-label">
           <select class="mdl-select__input" id="profilesid" name="profilesid">
@@ -18,6 +16,54 @@
           </select>
           <label class="mdl-select__label" for="profilesid">Account</label>
         </div>
+        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="follows">
+          <input type="checkbox" id="follows" class="mdl-switch__input" />
+          <span class="mdl-switch__label">Following</span>
+        </label>
+        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="likes">
+          <input type="checkbox" id="likes" class="mdl-switch__input" checked/>
+          <span class="mdl-switch__label">Liking</span>
+        </label>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" pattern="[1-9]" id="min-likes" />
+          <label class="mdl-textfield__label" for="min-likes">Min likes</label>
+          <span class="mdl-textfield__error">Input is not a number!</span>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" pattern="[1-9]" id="max-likes" />
+          <label class="mdl-textfield__label" for="max-likes">Max likes</label>
+          <span class="mdl-textfield__error">Input is not a number!</span>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" name="tags[]" />
+          <label class="mdl-textfield__label" for="max-likes">Tag</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" name="tags[]" />
+          <label class="mdl-textfield__label" for="max-likes">Tag</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" name="tags[]" />
+          <label class="mdl-textfield__label" for="max-likes">Tag</label>
+        </div>
+        <input type="hidden" value="1" id="type"/>
+        <input type="hidden" value="0" id="status"/>
+        <input type="submit" value="create" class="submit mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"/>
+      </form>
+    </div>
+
+    <div class="task-new mdl-tabs__panel" id="unfollow">
+      <form class="task-new-form">
+        <div class="mdl-select mdl-js-select mdl-select--floating-label">
+          <select class="wl-profilesid mdl-select__input" id="profilesid" name="profilesid">
+            <option value=""></option>
+            {{#each accounts}}
+              <option value="{{id}}">{{username}}</option>
+            {{/each}}
+          </select>
+          <label class="mdl-select__label" for="profilesid">Account</label>
+        </div>
+        {{> whitelists}}
         <input type="hidden" value="0" id="type"/>
         <input type="hidden" value="0" id="status"/>
         <input type="submit" value="create" class="submit mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"/>

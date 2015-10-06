@@ -6,11 +6,12 @@ TaskTypes = {
 };
 
 TaskStatuses = {
-  0: "new",
+  0: "started",
   1: "waiting",
-  2: "active",
+  2: "in progress",
   3: "paused",
-  4: "finished"
+  4: "stopping",
+  5: "finished"
 };
 
 var taskTable = {
@@ -44,5 +45,9 @@ if (Meteor.isServer) {
 }
 
 if (Meteor.isClient) {
-  Tasks.createTable($.extend(taskTable, {profilesid: ['$number']}));
+  Tasks.createTable($.extend(taskTable, {
+    id: ['$number'],
+    profilesid: ['$number', '$notnull'],
+    createdat: ['$datetime']
+  }));
 }

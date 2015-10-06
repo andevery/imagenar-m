@@ -41,5 +41,39 @@ Template.taskItem.helpers({
   },
   username: function() {
     return Profiles.select().where('id = ?', this.profilesid).fetch()[0].username;
+  },
+  active: function() {
+    return this.status < 3;
+  },
+  paused: function() {
+    return this.status >= 3;
+  },
+  stopping: function() {
+    return this.status > 3;
+  },
+  finished: function() {
+    return this.status > 3;
+  }
+});
+
+Template.taskItem.events({
+  'click .start': function (e) {
+    e.preventDefault();
+    Tasks.update({id: this.id, status: 0}).where('id = ?', this.id).save();
+  },
+  'click .pause': function (e) {
+    e.preventDefault();
+    Tasks.update({id: this.id, status: 3}).where('id = ?', this.id).save();
+  },
+  'click .stop': function (e) {
+    e.preventDefault();
+    Tasks.update({id: this.id, status: 4}).where('id = ?', this.id).save();
+  },
+  'click .delete': function (e) {
+    e.preventDefault();
+
+    if (confirm("Delete this task?")) {
+      Tasks.remove().where("id = ?", this.id).save();
+    }
   }
 });

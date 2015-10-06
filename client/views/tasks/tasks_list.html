@@ -1,11 +1,17 @@
 <template name="tasksList">
-  <table class="tasks-table mdl-data-table mdl-js-data-table">
-    <tbody>
-      {{#each tasks}}
-        {{> taskItem}}
-      {{/each}}
-    </tbody>
-  </table>
+  <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+    <div class="mdl-tabs__tab-bar">
+      <a href="#tasks-list" class="active mdl-tabs__tab {{#if active}}is-active{{/if}}">Active</a>
+      <a href="#tasks-list" class="finished mdl-tabs__tab {{#if finished}}is-active{{/if}}">Finished</a>
+    </div>
+    <table class="tasks-table mdl-data-table mdl-js-data-table" id="tasks-list">
+      <tbody>
+        {{#each tasks}}
+          {{> taskItem}}
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
   <a href="{{pathFor 'taskNew'}}" id="add-task" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">
     <i class="material-icons mdl-color-text--blue-grey-700">add</i>
   </a>

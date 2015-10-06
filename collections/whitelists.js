@@ -11,6 +11,7 @@ if (Meteor.isServer) {
 
 if (Meteor.isClient) {
   Whitelists.createTable({
+    id: ['$number'],
     username: ['$string', '$notnull'],
     profilesid: ['$number', '$notnull']
   });

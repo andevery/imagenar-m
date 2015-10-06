@@ -7,14 +7,24 @@
       <span>&nbsp;{{username}}&nbsp;</span>
       <span>/ {{taskStatus}}&nbsp;</span>
       {{counters}}
+      <span>&nbsp;/ added:&nbsp;</span>
+      {{livestamp createdat}}
     </td>
-    <td class="actions mdl-data-table__cell--non-numeric">
-      <a href="" class="delete mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons mdl-color-text--blue-grey-700">pause</i>
+    <td class="actions mdl-data-table__cell--non-numeric mdl-color-text--blue-grey-700">
+      <a href="" class="start mdl-button mdl-js-button mdl-button--icon {{#if active}}mdl-button--disabled{{/if}}">
+        <i class="material-icons">play_arrow</i>
       </a>
-      <a href="{{pathFor 'taskPage'}}" class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons mdl-color-text--blue-grey-700">stop</i>
+      <a href="" class="pause mdl-button mdl-js-button mdl-button--icon {{#if paused}}mdl-button--disabled{{/if}}">
+        <i class="material-icons">pause</i>
       </a>
+      <a href="" class="stop mdl-button mdl-js-button mdl-button--icon {{#if stopping}}mdl-button--disabled{{/if}}">
+        <i class="material-icons">stop</i>
+      </a>
+      {{#if finished}}
+        <a href="" class="delete mdl-button mdl-js-button mdl-button--icon">
+          <i class="material-icons">delete</i>
+        </a>
+      {{/if}}
     </td>
   </tr>
 </template>

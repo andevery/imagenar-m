@@ -5,24 +5,32 @@ Template.taskNew.helpers({
 });
 
 Template.taskNew.events({
-  'submit form': function (e) {
+  'submit .task-new-form': function (e) {
     e.preventDefault();
+    var tags = $(e.target).find('#tags').val();
+    alert(tags)
+    // var task;
+    // var type = $(e.target).find('#type').val();
 
-    var task = {
-      type: $(e.target).find('#type').val(),
-      profilesid: $(e.target).find('#profilesid').val()
-    };
+    // if (type == 0) {
+    //   task = {
+    //     type: type,
+    //     profilesid: $(e.target).find('#profilesid').val()
+    //   };
+    // } else {
+    //   task = {
+    //     type: type,
+    //     profilesid: $(e.target).find('#profilesid').val(),
+    //     follows: $(e.target).find('#follows').is(':checked'),
+    //     likes: $(e.target).find('#likes').is(':checked')
+    //   }
+    // }
 
-    Tasks.insert(task).save();
-    Router.go('tasksList');
+    // Tasks.insert(task).save();
+    // Router.go('tasksList');
   },
-  'change #profilesid': function (e) {
-    Session.set('profilesID', $(e.target).val())
+  'change .wl-profilesid': function (event, template) {
+    Session.set('wl-profilesID', $(event.target).val());
+    $('#wl-username').removeAttr('disabled');
   }
-});
-
-Tracker.autorun(function () {
-  if (Session.get('profilesID')) {
-    // var whitelistHandle = Meteor.subscribe
-  };
 });
