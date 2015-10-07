@@ -125,3 +125,15 @@ a.mdl-navigation__link {
   overflow: hidden;
   margin: 0;
 }
+
+.tags .tag {
+  width: 250px;
+  /*height: 60px;*/
+  float: left;
+  /*margin: 0;*/
+}
+
+.tags a {
+  display: inline-block;
+  float: right;
+}

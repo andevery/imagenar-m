@@ -28,7 +28,7 @@ var taskTable = {
   minFollows: ['$number', {$default: 100}],
   minMedia: ['$number', {$default: 20}],
   delay: ['$number', {$default: 60}],
-  tags: ['$string', '$notnull'],
+  tags: ['$string'],
   likesCount: ['$number', {$default: 0}],
   followsCount: ['$number', {$default: 0}],
   unfollowsCount: ['$number', {$default: 0}]

@@ -25,26 +25,23 @@
           <span class="mdl-switch__label">Liking</span>
         </label>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" pattern="[1-9]" id="min-likes" />
+          <input class="mdl-textfield__input" type="text" pattern="[1-9]" id="min-likes" value="2" />
           <label class="mdl-textfield__label" for="min-likes">Min likes</label>
           <span class="mdl-textfield__error">Input is not a number!</span>
         </div>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" pattern="[1-9]" id="max-likes" />
+          <input class="mdl-textfield__input" type="text" pattern="[1-9]" id="max-likes" value="4" />
           <label class="mdl-textfield__label" for="max-likes">Max likes</label>
           <span class="mdl-textfield__error">Input is not a number!</span>
         </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" name="tags[]" />
-          <label class="mdl-textfield__label" for="max-likes">Tag</label>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" name="tags[]" />
-          <label class="mdl-textfield__label" for="max-likes">Tag</label>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" name="tags[]" />
-          <label class="mdl-textfield__label" for="max-likes">Tag</label>
+        <div class="tags">
+          <div class="tag mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" name="tags[]" />
+            <label class="mdl-textfield__label" for="tags[]">Add tag</label>
+          </div>
+          <a href="" class="add-tag mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+            <i class="material-icons">add</i>
+          </a>
         </div>
         <input type="hidden" value="1" id="type"/>
         <input type="hidden" value="0" id="status"/>
