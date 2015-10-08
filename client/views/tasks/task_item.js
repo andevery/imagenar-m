@@ -43,16 +43,16 @@ Template.taskItem.helpers({
     return Profiles.select().where('id = ?', this.profilesid).fetch()[0].username;
   },
   active: function() {
-    return this.status < 3;
+    return this.status < 4 || this.status == 5;
   },
   paused: function() {
-    return this.status >= 3;
+    return this.status >= 3 || this.status == 0;
   },
   stopping: function() {
-    return this.status > 3;
+    return this.status > 4 || this.status == 0 || this.status == 3;
   },
   finished: function() {
-    return this.status > 3;
+    return this.status > 5;
   }
 });
 
@@ -67,7 +67,7 @@ Template.taskItem.events({
   },
   'click .stop': function (e) {
     e.preventDefault();
-    Tasks.update({id: this.id, status: 4}).where('id = ?', this.id).save();
+    Tasks.update({id: this.id, status: 5}).where('id = ?', this.id).save();
   },
   'click .delete': function (e) {
     e.preventDefault();

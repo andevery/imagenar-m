@@ -6,12 +6,13 @@ TaskTypes = {
 };
 
 TaskStatuses = {
-  0: "started",
+  0: "starting",
   1: "waiting",
   2: "in progress",
-  3: "paused",
-  4: "stopping",
-  5: "finished"
+  3: "pause",
+  4: "paused",
+  5: "stopping",
+  6: "finished"
 };
 
 var taskTable = {
