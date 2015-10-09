@@ -29,13 +29,13 @@ Template.taskItem.helpers({
   counters: function() {
     var counts = "";
     if (this.type == 0) {
-      counts = "<span>/ unfollowed: " + this.unfollowsCount + "</span>";
+      counts = "<span>/ unfollowed: " + this.unfollowscount + "</span>";
     }
     if (this.follows) {
-      counts += "<span>/ followed: " + this.followsCount + "&nbsp;</span>";
+      counts += "<span>/ followed: " + this.followscount + "&nbsp;</span>";
     }
     if (this.likes) {
-      counts += "<span>/ liked: " + this.likesCount + "</span>";
+      counts += "<span>/ liked: " + this.likescount + "</span>";
     }
     return new Handlebars.SafeString(counts);
   },

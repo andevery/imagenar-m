@@ -20,6 +20,9 @@ var taskTable = {
   status: ['$number', {$default: 0}],
   follows: ['$bool', {$default: false}],
   likes: ['$bool', {$default: false}],
+  likescount: ['$number', {$default: 0}],
+  followscount: ['$number', {$default: 0}],
+  unfollowscount: ['$number', {$default: 0}],
   maxLikes: ['$number', {$default: 2}],
   minLikes: ['$number', {$default: 4}],
   maxTags: ['$number', {$default: 50}],
@@ -29,10 +32,7 @@ var taskTable = {
   minFollows: ['$number', {$default: 100}],
   minMedia: ['$number', {$default: 20}],
   delay: ['$number', {$default: 60}],
-  tags: ['$string'],
-  likesCount: ['$number', {$default: 0}],
-  followsCount: ['$number', {$default: 0}],
-  unfollowsCount: ['$number', {$default: 0}]
+  tags: ['$string']
 };
 
 if (Meteor.isServer) {

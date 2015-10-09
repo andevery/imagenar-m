@@ -1,0 +1,9 @@
+<template name="errorsList">
+  <table class="errors-table mdl-data-table mdl-js-data-table">
+    <tbody>
+      {{#each errors}}
+        {{> errorItem}}
+      {{/each}}
+    </tbody>
+  </table>
+</template>
